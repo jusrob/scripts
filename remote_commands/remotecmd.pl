@@ -1,8 +1,6 @@
 #!/usr/bin/perl
 
-#$mount="$ARGV[0]\n";
-#chomp($mount);
-$user=<username>
+$user=<username>;
 $hostlist="<hostlist file>";
 unless (-e $hostlist){
         print "No hostlist file present!!!\n";
