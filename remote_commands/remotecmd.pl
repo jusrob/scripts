@@ -11,9 +11,11 @@ $cmd="<commands to run>";
 open(HOSTLIST,$hostlist);
         while(<HOSTLIST>) {
                 $output="";
-                @split="";
                 chomp;
                 $hostname=$_;
+                #as root
+                $sshcmd="ssh -o ConnectTimeout=2 -o BatchMode=yes -o StrictHostKeyChecking=no -naxt $user\@$hostname \"(echo '$cmd') | sudo su - root\" 2>&1";
+                #as user               
                 $sshcmd="ssh -o ConnectTimeout=2 -o BatchMode=yes -o StrictHostKeyChecking=no -naxt $user\@$hostname \"($cmd)\" 2>&1";
                 $output=`$sshcmd`;
                 chomp($output);
