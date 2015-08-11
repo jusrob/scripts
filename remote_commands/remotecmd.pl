@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+#  this assumes you have access without providing a password (kinit or keys)
 
 $user=<username>;
 $hostlist="<hostlist file>";
