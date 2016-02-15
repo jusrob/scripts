@@ -1,0 +1,6 @@
+Load up Terminal (Applications > Utilities > Terminal.app) and type the following.
+
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+To turn it back on, just do the opposite:
+
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
